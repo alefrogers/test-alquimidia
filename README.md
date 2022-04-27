@@ -11,7 +11,7 @@
 ### 🎨 Layout:
 - Bootstrap
 
-### 🔨 Como executar o App Electron:
+### 📂 Como clonar o projeto:
 Clone o repositório com:
 ```
 git clone https://github.com/joaodematejr/ProcessoSeletivoElectron.git && cd ProcessoSeletivoElectron
@@ -23,18 +23,18 @@ npm install
 ```
 <br/>
 
-### 🔨 Como executar o Electron:
+### ✈️ Como executar o Electron:
 
 Abra terminal e inicie com
 ```
 npm run dev
 ```
 
-### 🔨 Cadastro de Cientes:
+### 📝 Cadastro de Cientes:
 
 Projeto de teste para processo seletivo. Simples cadastro de clientes sem banco de dados com busca automática de CEP.
 
-### 🔨 Requisitos:
+### ⚙️ Requisitos:
 
 * Utilizar a linguagem Javascrip;
 * Criar uma tela de cadastro de clientes, com os seguintes campos: Nome, Identidade, CPF, Telefone, Email, Endereço, Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, Pais;
@@ -43,7 +43,7 @@ Projeto de teste para processo seletivo. Simples cadastro de clientes sem banco 
 * Os registros devem ficar salvo em memória, não será necessário criar um banco de dados para o armazenamento dos dados;
 * Disponibilizar projeto no github;
 
-### 🔨 Requisitos Atendidos:
+### ⚙️ Requisitos Atendidos:
 
 * O CEP será pesquisado na base viacep.com.br através de uma solicitação get.
 * Os dados serão retornados da Api viacep.com.br no formato JSON.
