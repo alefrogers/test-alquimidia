@@ -2,7 +2,7 @@
 #  <a href="https://alquimidia.com.br/" target="_blank"> <img src="https://alquimidia.com.br/assets/images/logo-alquimidia.svg" alt="alquimidia" width="200" height="50"/> </a> Processo Seletivo Alquimidia Tecnologia
 
 ### Justificativa
-Optei por remodelar a estrutura já que o sentido no teste era confirmar conhecimento tecnico, fiz uma arquitetura um pouco mais organizada optando pelo react como ferramenta principal e usando o electron para auxiliar. 
+Optei por remodelar a estrutura já que o sentido do teste era confirmar conhecimento tecnico, fiz uma arquitetura um pouco mais organizada optando pelo react como ferramenta principal e usando o electron para auxiliar. 
 
 SPA com react: 
 - Utilizei o bootstrap como base para o layout já que não havia um requisito definido.
