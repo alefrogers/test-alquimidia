@@ -16,7 +16,7 @@ const initData = {
   'pais'        : ''
 };
 
-function _findCep (data, setData, setSearchCep) {
+function _findCep (data, error, setData, setSearchCep, setError) {
 
   fetch("https://viacep.com.br/ws/"+ data.cep +"/json/")
       .then((res) => res.json())
@@ -28,8 +28,18 @@ function _findCep (data, setData, setSearchCep) {
         auxData.logradouro = response.logradouro;
         auxData.pais = 'Brasil';
         auxData.endereco = response.logradouro + ' - ' + response.bairro + ', ' + response.localidade + ', ' + response.uf;
+        if (error.cep) {
+          let auxError = {...error};
+          delete auxError.cep;
+          setError(auxError);
+        }
         setData(auxData);
         setSearchCep(true);
+      })
+      .catch((errorResponse) => {
+        let auxError = {...error};
+        auxError.cep = 'Cep inválido';
+        setError(auxError);
       });
 }
 
@@ -65,7 +75,7 @@ function _filterData(data, setData, setError, setSearchCep, saveRecord) {
   }
 
   if (data.bairro.length < 1) {
-    error.numero = "Bairro é um campo obrigatório.";
+    error.bairro = "Bairro é um campo obrigatório.";
   }
 
   if (Object.keys(error).length > 0) {
@@ -88,13 +98,13 @@ function Form(props) {
   const [data, setData] = useState(initData);
 
   return (
-      <section id="form-component" className={Object.keys(error).length > 0 ? 'was-validated' : ''}>
+      <section id="form-component">
           <div className="row mb-4">
               <div className="col">
                 <label htmlFor="nome" className="w-100 text-start">Nome</label>
                 <input 
                   type="text" 
-                  className="form-control w-100 invalid"
+                  className={`form-control w-100 ${error.nome ? "is-invalid" : ""} `}
                   name="nome" 
                   required
                   value={data.nome}
@@ -111,7 +121,7 @@ function Form(props) {
                 <label htmlFor="identidade" className="w-100 text-start">Identidade</label>
                 <input 
                   type="text" 
-                  className="form-control w-100" 
+                  className={`form-control w-100 ${error.identidade ? "is-invalid" : ""} `}
                   name="identidade"
                   value={data.identidade}
                   onChange={e => { 
@@ -126,7 +136,7 @@ function Form(props) {
                 <label htmlFor="cpf" className="w-100 text-start">CPF</label>
                 <input 
                   type="text" 
-                  className="form-control w-100" 
+                  className={`form-control w-100 ${error.cpf ? "is-invalid" : ""} `}
                   name="cpf"
                   value={data.cpf}
                   required
@@ -143,7 +153,7 @@ function Form(props) {
                 <label htmlFor="email" className="w-100 text-start">E-mail</label>
                 <input 
                   type="email" 
-                  className="form-control w-100" 
+                  className={`form-control w-100 ${error.email ? "is-invalid" : ""} `}
                   name="email"
                   value={data.email}
                   required
@@ -158,21 +168,24 @@ function Form(props) {
             </div>
 
             <div className="row mb-4">
-              <div className="col">
+              <div className={`col`}>
                 <label htmlFor="cep" className="w-100 text-start">CEP</label>
                 <input 
                   type="text" 
-                  className="form-control w-100" 
+                  className={`form-control w-100 ${error.cep ? 'is-invalid' : ''}`}
                   value={data.cep}
                   name="cep"
                   onChange={e => { 
                     _setDataForm(e.target.value, 'cep', data, setData);
                   }}
                 />
+                <div className="invalid-feedback text-start">
+                  {error.cep}
+                </div>
               </div>
 
               <div className="col text-start mt-4">
-                  <button onClick={() => _findCep(data, setData, setSearchCep)} className="btn btn-secondary w-100">Pesquisar</button>
+                  <button onClick={() => _findCep(data, error, setData, setSearchCep, setError)} className="btn btn-secondary w-100">Pesquisar</button>
               </div>
             </div>
 
@@ -182,7 +195,7 @@ function Form(props) {
                   <label htmlFor="endereco" className="w-100 text-start">Endereço</label>
                   <input 
                     type="text" 
-                    className="form-control w-100" 
+                    className={`form-control w-100 ${error.endereco ? "is-invalid" : ""} `}
                     name="endereco" 
                     value={data.endereco}
                     required
@@ -201,7 +214,7 @@ function Form(props) {
                   <label htmlFor="logradouro" className="w-100 text-start">Logradouro</label>
                   <input 
                     type="text" 
-                    className="form-control w-100" 
+                    className={`form-control w-100 ${error.logradouro ? "is-invalid" : ""} `} 
                     name="logradouro"
                     value={data.logradouro}
                     onChange={e => { 
@@ -218,7 +231,7 @@ function Form(props) {
                   <label htmlFor="numero" className="w-100 text-start">Número</label>
                   <input 
                     type="numeric" 
-                    className="form-control w-100" 
+                    className={`form-control w-100 ${error.numero ? "is-invalid" : ""} `}
                     name="numero"
                     value={data.numero}
                     onChange={e => { 
@@ -251,7 +264,7 @@ function Form(props) {
                   <label htmlFor="bairro" className="w-100 text-start">Bairro</label>
                   <input 
                     type="text" 
-                    className="form-control w-100" 
+                    className={`form-control w-100 ${error.bairro ? "is-invalid" : ""} `} 
                     name="bairro"
                     value={data.bairro}
                     required

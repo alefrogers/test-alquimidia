@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import logo from '../assets/svgs/logo-alquimidia.svg';
-import '../styles/App.css';
 import Form from '../components/Form';
 import List from '../components/List';
 
