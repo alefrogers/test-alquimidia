@@ -1,31 +1,26 @@
 
 #  <a href="https://alquimidia.com.br/" target="_blank"> <img src="https://alquimidia.com.br/assets/images/logo-alquimidia.svg" alt="alquimidia" width="200" height="50"/> </a> Processo Seletivo Alquimidia Tecnologia
 
+### Justificativa
+Optei por remodelar a estrutura já que o sentido no teste era confirmar conhecimento tecnico, fiz uma arquitetura um pouco mais organizada optando pelo react como ferramenta principal e usando o electron para auxiliar. 
 
-### 💻 Tecnologias:
-- Html
-- Css
-- Javascript.js
-- Electron.js
-
-### 🎨 Layout:
-- Bootstrap
-
-### 📂 Como clonar o projeto:
-Clone o repositório com:
-```
-git clone https://github.com/joaodematejr/ProcessoSeletivoElectron.git && cd ProcessoSeletivoElectron
-```
-
-Instale as dependências com:
-```
-npm install
-```
-<br/>
+SPA com react: 
+- Utilizei o bootstrap como base para o layout já que não havia um requisito definido.
+- Os comandos foram alterados para que com o ```npm run dev``` possa subir a aplicação já compilada.
+- ![Red text] Optei por não me apegar a detalhes como filtros pois iria onerar bastante tempo, como acredito que teste tecnico deve ser rapído, optei por focar em estrutura e código.
+- Também para não onerar muito tempo optei por não criar nenhuma imagem com o docker já que esse não foi também um dos requisitos.
+- Para salvar os dados resolvi usar o local storage, então todos os dados devem ser mantidos.
+- Também dei uma atenção para a responsividade
 
 ### ✈️ Como executar o Electron:
 
 Abra terminal e inicie com
+
+```
+npm install
+```
+e depois 
+
 ```
 npm run dev
 ```
@@ -42,10 +37,3 @@ Projeto de teste para processo seletivo. Simples cadastro de clientes sem banco 
 * A forma de consumo da API do via Cep, deverá ser utiliza JSON;
 * Os registros devem ficar salvo em memória, não será necessário criar um banco de dados para o armazenamento dos dados;
 * Disponibilizar projeto no github;
-
-### ⚙️ Requisitos Atendidos:
-
-* O CEP será pesquisado na base viacep.com.br através de uma solicitação get.
-* Os dados serão retornados da Api viacep.com.br no formato JSON.
-
-### Desenvolvido por João Dematé, em 04/2022.
