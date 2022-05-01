@@ -8,7 +8,7 @@ SPA com react:
 - Utilizei o bootstrap como base para o layout já que não havia um requisito definido.
 - Os comandos foram alterados para que com o ```npm run dev``` possa subir a aplicação já compilada.
 - <b>Optei por não me apegar a detalhes como filtros pois iria onerar bastante tempo, como acredito que teste tecnico deve ser rapído, optei por focar em estrutura e código.!</b>
-- Também para não onerar muito tempo optei por não criar nenhuma imagem com o docker já que esse não foi também um dos requisitos.
+- Também para não onerar muito tempo optei por não criar nenhuma imagem com o docker já que esse não foi um dos requisitos.
 - Para salvar os dados resolvi usar o local storage, então todos os dados devem ser mantidos.
 - Também dei uma atenção para a responsividade
 
