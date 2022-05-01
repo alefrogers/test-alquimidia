@@ -12,7 +12,7 @@ SPA com react:
 - Para salvar os dados resolvi usar o local storage, então todos os dados devem ser mantidos.
 - Também dei uma atenção para a responsividade.
 
-### ✈️ Como executar o Electron:
+### ✈️ Como executar:
 
 Abra terminal e inicie com
 
