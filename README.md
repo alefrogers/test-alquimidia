@@ -10,7 +10,7 @@ SPA com react:
 - <b>Optei por não me apegar a detalhes como filtros pois iria onerar bastante tempo, como acredito que teste tecnico deve ser rapído, optei por focar em estrutura e código.!</b>
 - Também para não onerar muito tempo optei por não criar nenhuma imagem com o docker já que esse não foi um dos requisitos.
 - Para salvar os dados resolvi usar o local storage, então todos os dados devem ser mantidos.
-- Também dei uma atenção para a responsividade
+- Também dei uma atenção para a responsividade.
 
 ### ✈️ Como executar o Electron:
 
