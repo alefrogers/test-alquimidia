@@ -2,12 +2,12 @@
 #  <a href="https://alquimidia.com.br/" target="_blank"> <img src="https://alquimidia.com.br/assets/images/logo-alquimidia.svg" alt="alquimidia" width="200" height="50"/> </a> Processo Seletivo Alquimidia Tecnologia
 
 ### Justificativa
-Optei por remodelar a estrutura já que o sentido do teste era confirmar conhecimento tecnico, fiz uma arquitetura um pouco mais organizada optando pelo react como ferramenta principal e usando o electron para auxiliar. Escolhi o react por ser uma ferramenta que vocês utilizam, usei functions components assim como é recomendado pelo proprio react afinal os class components devem morrer nos proximos anos.
+Optei por remodelar a estrutura já que o sentido do teste era confirmar conhecimento técnico, fiz uma arquitetura um pouco mais organizada optando pelo react como ferramenta principal e usando o electron para auxiliar. Escolhi o react por ser uma ferramenta que vocês utilizam, usei functions components assim como é recomendado pelo próprio react afinal os class components devem morrer nos próximos anos.
 
 SPA com react: 
 - Utilizei o bootstrap como base para o layout já que não havia um requisito definido.
 - Os comandos foram alterados para que com o ```npm run dev``` possa subir a aplicação já compilada.
-- <b>Optei por não me apegar a detalhes como filtros, mascaras e afins pois iria onerar bastante tempo, como acredito que teste tecnico deve ser rapído, optei por focar em estrutura e código.!</b>
+- <b>Optei por não me apegar a detalhes como filtros, mascaras e afins, pois iria onerar bastante tempo, como acredito que teste técnico deve ser rápido, optei por focar em estrutura e código!</b>
 - Também para não onerar muito tempo optei por não criar nenhuma imagem com o docker já que esse não foi um dos requisitos.
 - Para salvar os dados resolvi usar o local storage, então todos os dados devem ser mantidos.
 - Também dei uma atenção para a responsividade.
